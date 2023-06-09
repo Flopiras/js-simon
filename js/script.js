@@ -51,6 +51,13 @@ const startGame = () =>{
         //stampa in pagina
         countdown.innerText = --second;
     }, 1000)
+
+    //interruzione scansione secondi
+    setTimeout(function(){
+        clearInterval(timer);
+
+    }, 30000)
+    
     
 }
 
