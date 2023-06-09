@@ -40,8 +40,10 @@ const startGame = () =>{
     //disabilitare bottone d'inizio
     startButton.disabled = true;
 
+    //numeri generati stampati in pagina
     const numbers = getRandomNumbers ();
     console.log(numbers)
+    cpuRandomNumbers.innerText = `${numbers[0]}   ${numbers[1]}    ${numbers[2]}    ${numbers[3]}    ${numbers[4]}`
 }
 
 

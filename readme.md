@@ -18,6 +18,7 @@ Facciamo inserire i numeri all'utente tramite 5 campi di input invece che via pr
 2. preparare una funzione per generare 5 numeri casuali
 3. al click del bottone:
    - disabilitare il bottone(o farlo scomparire)
+   - far apparire i numeri generati in pagina
    - far partire una scansione del tempo che avanza per ogni secondo
      - stamparlo in pagina
    - interrompere la scansione del tempo dopo 30 secondi
