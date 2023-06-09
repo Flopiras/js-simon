@@ -43,11 +43,21 @@ const startGame = () =>{
     //numeri generati stampati in pagina
     const numbers = getRandomNumbers ();
     console.log(numbers)
-    cpuRandomNumbers.innerText = `${numbers[0]}   ${numbers[1]}    ${numbers[2]}    ${numbers[3]}    ${numbers[4]}`
+    cpuRandomNumbers.innerText = `${numbers[0]} |  ${numbers[1]}  |  ${numbers[2]}  |  ${numbers[3]}  |  ${numbers[4]}`
+
+    //partenza scansione dei secondi
+    let second = 30;
+    const timer = setInterval(() =>{
+        //stampa in pagina
+        countdown.innerText = --second;
+    }, 1000)
+    
 }
 
 
 //___________________________________________//
+
+let timer;
 
 //bottone INIZIA in ascolto
 startButton.addEventListener('click', startGame)
