@@ -54,21 +54,27 @@ const startGame = () =>{
     }, 1000)
     
     //scatto della seconda fase
-    setTimeout(secondFase(), 30000) 
+    setTimeout(() =>{
+        //interruzione scansione secondi
+        clearInterval(timer);
+        //inizio seconda fase
+        secondFase();
+    }, 30000) 
 }
 
-
-    
-
+//seconda fase
 function secondFase(){
-        //interruzione scansione secondi
-    clearInterval(timer);
     
     //rimozione numeri
     cpuRandomNumbers.classList.add('d-none');
 
     //apparizione card
     card.classList.remove('d-none');
+
+    //bottone INVIA in ascolto
+    inputButton.addEventListener('click', function(){
+
+    })
 }
 
 
