@@ -34,3 +34,18 @@ const getRandomNumbers = () => {
         return randomNumbers;
 }
 
+//inizio del gioco
+const startGame = () =>{
+
+    //disabilitare bottone d'inizio
+    startButton.disabled = true;
+
+    const numbers = getRandomNumbers ();
+    console.log(numbers)
+}
+
+
+//___________________________________________//
+
+//bottone INIZIA in ascolto
+startButton.addEventListener('click', startGame)
