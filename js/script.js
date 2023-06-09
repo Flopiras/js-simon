@@ -34,32 +34,43 @@ const getRandomNumbers = () => {
         return randomNumbers;
 }
 
+
 //inizio del gioco
 const startGame = () =>{
-
+    
     //disabilitare bottone d'inizio
     startButton.disabled = true;
-
+    
     //numeri generati stampati in pagina
     const numbers = getRandomNumbers ();
     console.log(numbers)
     cpuRandomNumbers.innerText = `${numbers[0]} |  ${numbers[1]}  |  ${numbers[2]}  |  ${numbers[3]}  |  ${numbers[4]}`
-
+    
     //partenza scansione dei secondi
     let second = 30;
     const timer = setInterval(() =>{
         //stampa in pagina
         countdown.innerText = --second;
     }, 1000)
-
-    //interruzione scansione secondi
-    setTimeout(function(){
-        clearInterval(timer);
-
-    }, 30000)
     
-    
+    //scatto della seconda fase
+    setTimeout(secondFase(), 30000) 
 }
+
+
+    
+
+function secondFase(){
+        //interruzione scansione secondi
+    clearInterval(timer);
+    
+    //rimozione numeri
+    cpuRandomNumbers.classList.add('d-none');
+
+    //apparizione card
+    card.classList.remove('d-none');
+}
+
 
 
 //___________________________________________//
