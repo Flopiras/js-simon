@@ -1,0 +1,14 @@
+#countdown{
+    font-size: 5rem;
+    margin-bottom: 6rem;
+}
+
+#numbers{
+    font-size: 4rem;
+}
+
+
+.btn{
+    box-shadow: 0 0 3px  black;
+    text-shadow: 0 0 2px  black;
+}
