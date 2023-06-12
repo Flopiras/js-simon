@@ -8,8 +8,6 @@ const card =  document.getElementById('number-card');
 const inputs = document.querySelectorAll('input');
 const inputButton =  document.getElementById('input-button');
 
-console.log(input1Number.value)
-
 
 //  |----------| //
 //  | FUNZIONI | //
@@ -70,10 +68,10 @@ function secondFase(){
     card.classList.remove('d-none');
 
     //bottone INVIA in ascolto
-    form.addEventListener('submit', (event) => {
+    inputButton.addEventListener('click', (event) => {
         
         //blocco del form
-        event.prevendDefault();
+        event.preventDefault();
 
         //mettere i numeri scelti dall'utente in un array
         const userNumbers = [];
@@ -82,22 +80,27 @@ function secondFase(){
             const userValue = inputs[i].value;
 
             //validazione
-            if(isNaN(userValue) && userValue >= min && userValue <= CSSMathMax && !userNumbers.includes(userValue)){
+            if(isNaN(userValue) && userValue >= 0 && userValue <= 100 && !userNumbers.includes(userValue)){
+                
                 userNumbers.push(userValue);
             }
         }
 
         //preparare il punteggio
-        let score = 0;
+        let score = [];
 
         //verifica dei numeri
-        if(numbers.includes(user1Number || user2Number || user3Number || user4Number || user5Number)){
-            score++;
+        for(let i = 0; i < userNumbers; i++){
+
+            if(numbers.includes(userValue)){
+                score.push(userValue);
+            }
         }
 
         console.log(score)
 
-
+        //stampare il messaggio in pagina
+        alert(`Hai indovinato ${score.length} numeri: ${score}`);
 
     })
 }
