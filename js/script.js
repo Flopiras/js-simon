@@ -82,7 +82,9 @@ function secondFase(){
             const userValue = inputs[i].value;
 
             //validazione
-            if(isNaN(userValue) ){}
+            if(isNaN(userValue) && userValue >= min && userValue <= CSSMathMax && !userNumbers.includes(userValue)){
+                userNumbers.push(userValue);
+            }
         }
 
         //preparare il punteggio
