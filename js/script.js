@@ -5,11 +5,7 @@ const startButton = document.getElementById('start-button');
 const countdown =  document.getElementById('countdown');
 const cpuRandomNumbers =  document.getElementById('random-numbers');
 const card =  document.getElementById('number-card');
-const input1Number =  document.getElementById('n1');
-const input2Number =  document.getElementById('n2');
-const input3Number =  document.getElementById('n3');
-const input4Number =  document.getElementById('n4');
-const input5Number =  document.getElementById('n5');
+const inputs = document.querySelectorAll('input');
 const inputButton =  document.getElementById('input-button');
 
 console.log(input1Number.value)
@@ -74,14 +70,20 @@ function secondFase(){
     card.classList.remove('d-none');
 
     //bottone INVIA in ascolto
-    inputButton.addEventListener('click', function(){
+    form.addEventListener('submit', (event) => {
+        
+        //blocco del form
+        event.prevendDefault();
 
-        //numeri inseriti dall'utente
-        const user1Number = input1Number.value.trim();
-        const user2Number = input2Number.value.trim();
-        const user3Number = input3Number.value.trim();
-        const user4Number = input4Number.value.trim();
-        const user5Number = input5Number.value.trim();
+        //mettere i numeri scelti dall'utente in un array
+        const userNumbers = [];
+
+        for (let i = 0; i < inputs.length; i++){
+            const userValue = inputs[i].value;
+
+            //validazione
+            if(isNaN(userValue) ){}
+        }
 
         //preparare il punteggio
         let score = 0;
