@@ -7,7 +7,7 @@ const cpuRandomNumbers =  document.getElementById('random-numbers');
 const card =  document.getElementById('number-card');
 const inputs = document.querySelectorAll('input');
 const inputButton =  document.getElementById('input-button');
-
+let numbers;
 
 //  |----------| //
 //  | FUNZIONI | //
@@ -32,30 +32,29 @@ const getRandomNumbers = () => {
 
 
 //inizio del gioco
-const startGame = () =>{
+function startGame(){
     
     //disabilitare bottone d'inizio
     startButton.disabled = true;
     
     //numeri generati stampati in pagina
-    const numbers = getRandomNumbers ();
+    let numbers = getRandomNumbers ();
     console.log(numbers)
     cpuRandomNumbers.innerText = `${numbers[0]} |  ${numbers[1]}  |  ${numbers[2]}  |  ${numbers[3]}  |  ${numbers[4]}`
     
     //partenza scansione dei secondi
     let second = 30;
     const timer = setInterval(() =>{
+
+        if(second === 1){
+            //interruzione scansione secondi
+           clearInterval(timer); 
+          //inizio seconda fase
+           secondFase();
+        }
         //stampa in pagina
         countdown.innerText = --second;
     }, 1000)
-    
-    //scatto della seconda fase
-    setTimeout(() =>{
-        //interruzione scansione secondi
-        clearInterval(timer);
-        //inizio seconda fase
-        secondFase();
-    }, 30000) 
 }
 
 //seconda fase
@@ -80,7 +79,7 @@ function secondFase(){
             const userValue = inputs[i].value;
 
             //validazione
-            if(isNaN(userValue) && userValue >= 0 && userValue <= 100 && !userNumbers.includes(userValue)){
+            if(!isNaN(userValue) && userValue >= 0 && userValue <= 100 && !numbers.includes(userValue)){
                 
                 userNumbers.push(userValue);
             }
