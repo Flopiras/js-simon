@@ -5,12 +5,14 @@ const startButton = document.getElementById('start-button');
 const countdown =  document.getElementById('countdown');
 const cpuRandomNumbers =  document.getElementById('random-numbers');
 const card =  document.getElementById('number-card');
-const userNumber1 =  document.getElementById('n1');
-const userNumber2 =  document.getElementById('n2');
-const userNumber3 =  document.getElementById('n3');
-const userNumber4 =  document.getElementById('n4');
-const userNumber5 =  document.getElementById('n5');
+const input1Number =  document.getElementById('n1');
+const input2Number =  document.getElementById('n2');
+const input3Number =  document.getElementById('n3');
+const input4Number =  document.getElementById('n4');
+const input5Number =  document.getElementById('n5');
 const inputButton =  document.getElementById('input-button');
+
+console.log(input1Number.value)
 
 
 //  |----------| //
@@ -73,6 +75,16 @@ function secondFase(){
 
     //bottone INVIA in ascolto
     inputButton.addEventListener('click', function(){
+
+        //numeri inseriti dall'utente
+        const user1Number = input1Number.value.trim();
+        const user2Number = input2Number.value.trim();
+        const user3Number = input3Number.value.trim();
+        const user4Number = input4Number.value.trim();
+        const user5Number = input5Number.value.trim();
+
+
+
 
     })
 }
