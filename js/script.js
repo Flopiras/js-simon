@@ -83,6 +83,15 @@ function secondFase(){
         const user4Number = input4Number.value.trim();
         const user5Number = input5Number.value.trim();
 
+        //preparare il punteggio
+        let score = 0;
+
+        //verifica dei numeri
+        if(numbers.includes(user1Number || user2Number || user3Number || user4Number || user5Number)){
+            score++;
+        }
+
+        console.log(score)
 
 
 
