@@ -74,22 +74,21 @@ function secondFase(){
 
         //mettere i numeri scelti dall'utente in un array
         const userNumbers = [];
+        //preparare il punteggio
+            let score = [];
 
         for (let i = 0; i < inputs.length; i++){
-            const userValue = inputs[i].value;
+            const userValue = parseInt(inputs[i].value);
 
             //validazione
-            if(!isNaN(userValue) && userValue >= 0 && userValue <= 100 && !numbers.includes(userValue)){
+            if(userValue >= 0 && userValue <= 100 && numbers.includes(userValue)){
                 
-                userNumbers.push(userValue);
+                score.push(userValue);
             }
         }
 
-        //preparare il punteggio
-        let score = [];
-
         //verifica dei numeri
-        for(let i = 0; i < userNumbers; i++){
+        for(let i = 0; i < userNumbers.length; i++){
 
             if(numbers.includes(userValue)){
                 score.push(userValue);
@@ -103,8 +102,6 @@ function secondFase(){
 
     })
 }
-
-
 
 //___________________________________________//
 
